@@ -1,5 +1,5 @@
 <template>
-    <div class="a22" @click="cneHomeBGC" :style="{backgroundColor: homeProvideInLocalA22.BGC, borderColor: homeProvideInLocalA22.BGC}">
+    <div class="a22" @click="cneHomehomeProvideColor" :style="{backgroundColor: homeProvideInLocalA22.homeProvideColor, borderColor: homeProvideInLocalA22.homeProvideColor}">
       a22
     </div>
 </template>
@@ -17,8 +17,8 @@ export default {
         homeThisInA22: "homeThis"
     },
     methods:{
-        cneHomeBGC(){
-            this.homeProvideInLocalA22.BGC = color();
+        cneHomehomeProvideColor(){
+            this.homeProvideInLocalA22.homeProvideColor = color();
         }
     },
     components:{

@@ -4,7 +4,7 @@
         <div class="childrenDiv">
             <c1></c1>
         </div>
-        <button class="C-btn" @click="cneBGCinComC">C-cne-home-BGC</button>
+        <button class="C-btn" @click="cnehomeProvideColorinComC">homeProvideColor</button>
     </div>
 </template>
 
@@ -15,15 +15,21 @@ export default {
     name: 'C',
     data () {
         return {
-             homeProvide: this.homeThisInC
+             homeProvide: this.homeThisInC,
+             num: 47
+        }
+    },
+    provide(){
+        return {
+            provideCount: this.num
         }
     },
     inject: {
-        homeThisInC: "homeThis"
+        homeThisInC: "homeThis",
     },
     methods:{
-        cneBGCinComC(){
-            this.homeProvide.BGC = color();
+        cnehomeProvideColorinComC(){
+            this.homeProvide.homeProvideColor = color();
         }
     },
     components:{
@@ -39,12 +45,6 @@ export default {
 </script>
 
 <style scoped type="text/css">
-.C{
-    width: 400px;
-    height: 400px;
-    border: 1px solid #20b1aa;
-    position: relative;
-}
 .wordC{
     font-size: 140px;
     transform: translate(-50%, -50%);

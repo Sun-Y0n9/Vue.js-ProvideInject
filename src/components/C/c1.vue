@@ -1,6 +1,6 @@
 <template>
-    <div class="c1" :style="{backgroundColor: homeProvideThis.BGC, borderColor: homeProvideThis.BGC}">
-      c1
+    <div class="c1" :style="{backgroundColor: homeProvideThis.homeProvideColor, borderColor: homeProvideThis.homeProvideColor}">
+      c1 注入的provideCount值 : {{homeCountLocalC1}}
     </div>
 </template>
 
@@ -9,11 +9,13 @@ export default {
     name: 'c1',
     data () {
         return {
-            homeProvideThis: this.homeThisInC1
+            homeProvideThis: this.homeThisInC1,
+            homeCountLocalC1: this.provideCountInC1
         }
     },
     inject: {
-        homeThisInC1: "homeThis"
+        homeThisInC1: "homeThis",
+        provideCountInC1: "provideCount"
     },
     methods:{
     

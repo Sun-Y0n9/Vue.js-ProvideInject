@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="A">
-      	<span class="wordA" :style="{color: homeprovide.BGC}">A</span>
+      	<span class="wordA" :style="{color: homeprovide.homeProvideColor}">A</span>
         <div class="childrenDiv">
           <a1></a1>
           <a2></a2>
@@ -40,12 +40,6 @@ export default {
 </script>
 
 <style scoped type="text/css">
-.A{
-	width: 400px;
-	height: 400px;
-	border: 1px solid #20b1aa;
-	position: relative;
-}
 .wordA{
 	font-size: 140px;
 	transform: translate(-50%, -50%);

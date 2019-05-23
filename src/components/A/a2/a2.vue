@@ -1,6 +1,6 @@
 <template>
-    <div class="a2" :style="{borderColor: homeProvideThisInlocalA2.BGC}">
-      <span class="fixed" :style="{color: homeProvideThisInlocalA2.BGC}">a2</span>
+    <div class="a2" :style="{borderColor: homeProvideThisInlocalA2.homeProvideColor}">
+      <span class="fixed" :style="{color: homeProvideThisInlocalA2.homeProvideColor}">a2</span>
       <div class="childrenDiv">
           <a21></a21>
           <a22></a22>

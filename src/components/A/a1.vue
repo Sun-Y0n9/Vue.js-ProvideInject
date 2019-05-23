@@ -1,5 +1,5 @@
 <template>
-    <div class="a1" :style="{backgroundColor: homeProvideThisInLocalA1.BGC, borderColor: homeProvideThisInLocalA1.BGC}">
+    <div class="a1" :style="{backgroundColor: homeProvideThisInLocalA1.homeProvideColor, borderColor: homeProvideThisInLocalA1.homeProvideColor}">
       a1
     </div>
 </template>

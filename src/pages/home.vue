@@ -1,12 +1,22 @@
 <template>
-    <div class="home" :style="{borderRight: '25px solid' + BGC}">
-      <AC class="homec"></AC>
-      <BC class="homec"></BC>
-      <CC class="homec"></CC>
-      <div class="fixed">
-      	<button :style="{backgroundColor: BGC}" class="btn" @click="cneBgc">home-cne-BGC {{BGC}}</button>
-      </div>
+  <div class="homePage">
+    <div class="homeFlex">
+      <AC></AC>
+      <BC></BC>
+      <CC></CC>
     </div>
+    <div class="homeVariable">
+        <span>home中定义的Color : {{homeProvideColor}}</span>
+        <span>home中定义的Number : {{count}}</span>
+    </div>
+    <div class="fixed">
+      <button :style="{backgroundColor: homeProvideColor}" class="changeColorBtn" @click="cnehomeProvideColor">homeProvideColor : {{homeProvideColor}}</button>
+      <button @click="cnehomeProvideCount">
+        homeProvideCount : {{count}}
+      </button>
+    </div>
+  </div>
+    
 </template>
 
 <script>
@@ -18,18 +28,23 @@ export default {
     name: 'home',
     data () {
         return {
-         	BGC: "#20b1aa"
+         	homeProvideColor: "#20b1aa",
+          count: 10
         }
     },
     provide(){
     	return {
-    		homeThis: this
+    		homeThis: this,
+        provideCount: this.count
     	}
     },
     methods:{
-    	cneBgc(){
-    		this.BGC =color();
-    	}
+    	cnehomeProvideColor(){
+    		this.homeProvideColor =color();
+    	},
+      cnehomeProvideCount(){
+        this.count = Math.ceil(Math.random() * 99)
+      }
     },
     components:{
     	AC,
@@ -46,14 +61,47 @@ export default {
 </script>
 
 <style scoped type="text/css">
-.home{
+.homeFlex{
 	width: 100%;
 	height: 100%;
 	display: flex;
 	justify-content: space-between;
 	box-sizing: border-box;
+  padding: 0 2px;
 }
-.btn{
+.homeFlex > div{
+    width: 400px;
+    height: 400px;
+    border: 1px solid #20b1aa;
+    position: relative;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    padding-top: 185px;
+}
+.homeVariable{
+  padding: 0 20px;
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-around;
+}
+.homeVariable span{
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  box-shadow: inset 0 0 15px #dcdcdc;
+  font-weight: bold;
+}
+.fixed{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  position: fixed;
+  left: 0;
+  bottom: 40px;
+}
+.fixed button{
 	padding: 0 30px;
 	height: 30px;
 	line-height: 30px;
@@ -64,12 +112,8 @@ export default {
 	outline: none;
   border-radius: 5px;
 }
-.fixed{
-	width: 100%;
-	height: 50px;
-	line-height: 50px;
-	position: fixed;
-	left: 0;
-	bottom: 40px;
+
+span{
+  padding-right: 0 5px;
 }
 </style>
